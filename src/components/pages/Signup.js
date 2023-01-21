@@ -37,7 +37,7 @@ export class Signup extends React.Component {
     }
 
     isNull = () => {
-        if (this.state.data.name == "" || this.state.data.username == "" || this.state.data.password == "") {
+        if (this.state.data.name === "" || this.state.data.username === "" || this.state.data.password === "") {
             return true;
         }
         else return false;

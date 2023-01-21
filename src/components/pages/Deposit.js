@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useNavigate, redirect, Navigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import {BsCoin} from 'react-icons/bs';
-import { SwalDialog } from "../commons/sweetAlert2/SwalDialog";
 import Swal from "sweetalert2";
 import { DepositService } from "../apis/actionservice";
 import NavigationBar from "../commons/page/NavigationBar";
@@ -28,7 +27,7 @@ export class Deposit extends React.Component {
         
       }
       isNull = () => {
-        if (this.state.data.money == null || this.state.data.money == 0 ) {
+        if (this.state.data.money === null || this.state.data.money === 0 ) {
             return true;
         }
         else return false;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaMoneyBillAlt } from 'react-icons/fa';
 import { BsCoin } from 'react-icons/bs';
 import { Link, Navigate } from "react-router-dom";
-import { AddUser, LogIn } from "../apis/userApi";
+import { LogIn } from "../apis/userApi";
 
 
 export function Signin() {
@@ -28,7 +28,7 @@ export function Signin() {
         }
     }
     const isNull = () => {
-        if (data.username == "" || data.password == "") {
+        if (data.username === "" || data.password === "") {
             return true;
         }
         else return false;

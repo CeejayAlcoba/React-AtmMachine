@@ -13,7 +13,6 @@ import NavigationBar from "../commons/page/NavigationBar";
 export default function UnAuthorizeRoutes() {
   return (
     <>
-   
     <BrowserRouter>
       <Routes>
        <Route path="*" element={<Signin />}/>

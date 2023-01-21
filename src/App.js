@@ -6,10 +6,9 @@ import { LogIn } from './components/apis/userApi';
 import UnAuthorizeRoutes from './components/routes/UnautorizeRoutes';
 import { useEffect } from 'react';
 function App() {
-  var getUser = sessionStorage.getItem('username');
   return (
     <div className="">
-      {getUser?  <RoutesPage/>:<UnAuthorizeRoutes/>}
+      {<RoutesPage/>}
     </div>
   );
   

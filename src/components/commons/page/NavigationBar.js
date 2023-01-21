@@ -3,9 +3,6 @@ import { FiLogOut } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 function NavigationBar() {
     const getUsername = sessionStorage.getItem('username')
-    const handleLogout=()=>{
-
-    }
     return (
         <div className="w-100">
             <nav className="d-flex justify-content-between p-3 navbar navbar-expand-lg navbar-light bg-primary text-light">
