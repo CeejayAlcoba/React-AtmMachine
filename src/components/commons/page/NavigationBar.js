@@ -1,5 +1,6 @@
 import { FaMoneyBillAlt } from 'react-icons/fa';
-import { FiLogOut } from 'react-icons/fi';
+import { FiLogOut,FiLogIn } from 'react-icons/fi';
+import { IoMdCreate } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 function NavigationBar() {
     const getUsername = sessionStorage.getItem('username')
@@ -21,7 +22,17 @@ function NavigationBar() {
                         <FiLogOut/>
                         Logout
                     </a>
-                    </Link> : ""
+                    </Link> : 
+                    <div className="ml-auto text-light">
+                    <Link to="/signup"className='text-light'>
+                        <IoMdCreate/>
+                    Sign up
+                    </Link >
+                    <Link to="/signin" className='m-3 text-light'>
+                        <FiLogIn/>
+                    Sign In
+                    </Link>
+                    </div>
                 }
 
 

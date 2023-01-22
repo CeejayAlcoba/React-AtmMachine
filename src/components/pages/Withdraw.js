@@ -4,6 +4,7 @@ import { CheckBalanceService, WithdrawService } from "../apis/actionservice";
 import Swal from "sweetalert2";
 import NavigationBar from "../commons/page/NavigationBar";
 import { BsCashCoin } from 'react-icons/bs';
+import FooterBar from "../commons/page/FooterBar";
 export class Withdraw extends React.Component {
     constructor(props) {
         super(props);
@@ -18,7 +19,7 @@ export class Withdraw extends React.Component {
     }
 
     isBalanceIsgreaterThanMoney() {
-        if (this.state.data.balance < this.state.data.money) { return true }
+        if (this.state.data.balance < this.state.data.money || this.state.data.money==="" || this.state.data.money===null) { return true }
         else return false;
     }
     handleSubmit = async () => {
@@ -34,7 +35,7 @@ export class Withdraw extends React.Component {
         });
     }
     render() {
-        return <>
+        return <div className="d-flex flex-column bg-light min-vh-100 text-center">
             {<NavigationBar />}
             <div className="mt-5 d-flex justify-content-center text-center">
 
@@ -44,12 +45,12 @@ export class Withdraw extends React.Component {
                         ATM Withdraw
                     </h2>
                     <div className="form-outline mb-4">
-                        <label className="form-label" for="form2Example1">Your Balance :{this.state.data.balance}</label>
+                        <label className="form-label">Your Balance :{this.state.data.balance}</label>
 
                     </div>
                     <div className="form-outline mb-4">
                         <input type="number" className="form-control" value={this.state.data.money} onChange={(e) => this.setState({ ...this.state, data: { ...this.state.data, money: e.target.value } })} />
-                        <label className="form-label" for="form2Example1">Money</label>
+                        <label className="form-label">Money</label>
                     </div>
 
                     <button type="submit" className="btn btn-primary rounded-pill" disabled={this.isBalanceIsgreaterThanMoney()} onClick={() => this.handleSubmit()}>Withdraw</button>
@@ -59,7 +60,8 @@ export class Withdraw extends React.Component {
                     </Link>
                 </div>
             </div>
+            <FooterBar/>
             {this.state.isNavigate ? <Navigate to="/home" /> : ""}
-        </>;
+        </div>;
     }
 }
